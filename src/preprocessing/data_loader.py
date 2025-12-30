@@ -20,7 +20,13 @@ from typing import Tuple, Optional, List, Dict, Callable, Union
 import torch
 from torch.utils.data import Dataset, DataLoader
 
-from .augmentation import DocumentAugmentation
+# Optional import - augmentation requires albumentations
+try:
+    from .augmentation import DocumentAugmentation
+    AUGMENTATION_AVAILABLE = True
+except (ImportError, NameError):
+    DocumentAugmentation = None
+    AUGMENTATION_AVAILABLE = False
 
 
 class DocumentDataset(Dataset):
@@ -380,7 +386,7 @@ def create_dataloader(
     """
     # Create transform
     transform = None
-    if augment and split == 'train':
+    if augment and split == 'train' and AUGMENTATION_AVAILABLE:
         transform = DocumentAugmentation(image_size=image_size)
     
     # Create dataset
