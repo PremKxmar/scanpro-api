@@ -1,67 +1,24 @@
-# Shadow-Robust Document Scanner - Dependencies
-# Install with: pip install -r requirements.txt
+# =============================================================================
+# ScanPro API - Minimal Requirements for Deployment
+# =============================================================================
+# This file contains only the dependencies needed for the API server.
+# For full development, use requirements-full.txt
 
-# =============================================================================
-# Core ML/DL Frameworks
-# =============================================================================
-torch>=2.2.0
-torchvision>=0.17.0
-kornia>=0.7.0                    # Differentiable CV operations
-
-# =============================================================================
-# Image Processing
-# =============================================================================
-opencv-python>=4.8.0
-scikit-image>=0.22.0
-Pillow>=10.0.0
-
-# =============================================================================
-# Model Architecture
-# =============================================================================
-timm>=0.9.12                     # PyTorch Image Models (MobileNetV3)
-segmentation-models-pytorch>=0.3.3
-
-# =============================================================================
-# Training & Augmentation
-# =============================================================================
-albumentations>=1.3.1            # Advanced augmentations
-tensorboard>=2.15.0              # Training visualization
-tqdm>=4.66.0                     # Progress bars
-pyyaml>=6.0.1                    # Config files
-
-# =============================================================================
-# Deployment
-# =============================================================================
-tensorflow>=2.16.0               # TFLite conversion
-onnx>=1.15.0                     # Model export
-onnx-tf>=1.10.0                  # ONNX to TF conversion
-
-# =============================================================================
-# Evaluation & OCR
-# =============================================================================
-pytesseract>=0.3.10              # OCR validation
-codecarbon>=2.3.0                # Carbon footprint tracking
-
-# =============================================================================
-# Utilities
-# =============================================================================
-matplotlib>=3.8.0
-pandas>=2.1.0
+# Core
+opencv-python-headless>=4.8.0   # Headless version for servers
 numpy>=1.24.0
 scipy>=1.11.0
 
-# =============================================================================
-# Development
-# =============================================================================
-pytest>=7.4.0
-jupyter>=1.0.0
-ipywidgets>=8.1.0
+# Deep Learning (CPU only for deployment)
+torch>=2.0.0
+torchvision>=0.15.0
+timm>=0.9.0                     # For MobileNetV3 encoder
 
-# =============================================================================
-# API Server (Mobile App Integration)
-# =============================================================================
+# API Server
 flask>=3.0.0
 flask-cors>=4.0.0
-reportlab>=4.0.0                 # PDF generation
-gunicorn>=21.0.0                 # Production WSGI server for deployment
+gunicorn>=21.0.0
 
+# PDF Generation
+reportlab>=4.0.0
+Pillow>=10.0.0
