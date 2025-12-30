@@ -12,9 +12,8 @@
  *   GET  /api/info     - API capabilities
  */
 
-// Configure the API base URL - change this to your server address
-// Using network IP so mobile devices on same WiFi can connect
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://10.12.225.139:5000';
+// Configure the API base URL - Using production Render deployment
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://scanpro-api.onrender.com';
 
 export interface ScanOptions {
   remove_shadows?: boolean;

@@ -81,6 +81,15 @@ def encode_image_base64(image: np.ndarray, format: str = 'jpeg') -> str:
 # API Endpoints
 # =============================================================================
 
+@app.route('/', methods=['GET'])
+def index():
+    """Root endpoint for quick check."""
+    return jsonify({
+        'status': 'online',
+        'message': 'ScanPro API is running',
+        'docs': '/api/info'
+    })
+
 @app.route('/api/health', methods=['GET'])
 def health_check():
     """Health check endpoint."""
