@@ -58,7 +58,7 @@ class DocumentAugmentation:
         else:
             self.transform = None
     
-    def _build_albumentations_pipeline(self) -> A.Compose:
+    def _build_albumentations_pipeline(self):
         """Build albumentations pipeline."""
         intensity = self.augment_intensity
         
