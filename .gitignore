@@ -1,0 +1,81 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ML/Data
+*.pth
+*.onnx
+*.pt
+checkpoints/
+*.h5
+*.pkl
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node (for scanpro frontend)
+scanpro/node_modules/
+scanpro/dist/
+scanpro/.env.local
+
+# Android build artifacts
+scanpro/android/.gradle/
+scanpro/android/app/build/
+scanpro/android/build/
+scanpro/android/capacitor-cordova-android-plugins/build/
+*.apk
+*.aab
+
+# Environment
+.env
+.env.local
+*.local
+
+# Temp
+tmp/
+temp/
+*.tmp

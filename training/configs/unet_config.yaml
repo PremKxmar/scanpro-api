@@ -1,0 +1,43 @@
+# U-Net Document Detector Training Configuration
+# Usage: python training/train_unet.py --config training/configs/unet_config.yaml
+
+# =============================================================================
+# Data Settings
+# =============================================================================
+data_dir: "data"
+use_synthetic: true          # Use synthetic data (set false when real data available)
+synthetic_samples: 10000     # Number of synthetic training samples
+
+# =============================================================================
+# Model Settings
+# =============================================================================
+encoder: "timm-mobilenetv3_large_100"  # Backbone encoder
+pretrained: true                        # Use ImageNet pretrained weights
+
+# =============================================================================
+# Training Hyperparameters
+# =============================================================================
+epochs: 50
+batch_size: 32
+lr: 0.001               # Learning rate
+weight_decay: 0.0001    # AdamW weight decay
+image_size: 256         # Input image size (square)
+
+# =============================================================================
+# Loss Function Weights
+# =============================================================================
+dice_weight: 0.7        # Weight for Dice loss
+focal_weight: 0.3       # Weight for Boundary Focal loss
+
+# =============================================================================
+# Training Settings
+# =============================================================================
+device: "auto"          # auto, cuda, or cpu
+num_workers: 4          # DataLoader workers
+patience: 10            # Early stopping patience
+
+# =============================================================================
+# Output Directories
+# =============================================================================
+save_dir: "training/checkpoints"
+log_dir: "training/logs"

@@ -1,0 +1,7 @@
+{
+  "name": "ScanPro",
+  "description": "A high-end document scanner app with AI enhancement, shadow removal, and intelligent edge detection.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
